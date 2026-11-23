@@ -30,10 +30,7 @@ export default function App() {
       </header>
       <main>
         <section className="hero" aria-labelledby="intro-title">
-          <div className="hero-art" aria-hidden="true">
-            <img className="hero-shot hero-shot-main" src={mediaPath('banner-wash.webp')} alt="" fetchPriority="high" />
-            <img className="hero-shot hero-shot-detail" src={mediaPath('banner-spa.webp')} alt="" />
-          </div>
+          <img className="hero-image" src={mediaPath('hero-premium-wash.webp')} alt="" fetchPriority="high" />
           <div className="wrap hero-inner">
             <p className="eyebrow">AI-креатор / Режиссёр монтажа</p>
             <h1 id="intro-title">Дмитрий Малышев</h1>
@@ -51,8 +48,8 @@ export default function App() {
             <img className="portrait" src={`${import.meta.env.BASE_URL}assets/dmitry-malyshev.jpg`} alt="Дмитрий Малышев" width="1254" height="1254" loading="lazy" />
             <div>
               <h2 id="about-title">Обо мне</h2>
-              <p className="section-lead">Создаю рекламные и имиджевые AI-ролики. Работаю с идеей, изображением и ритмом как режиссёр монтажа.</p>
-              <p className="muted">Разрабатываю визуальную концепцию, генерирую и анимирую кадры, собираю историю в монтаже. Подбираю музыку и оформляю звук, чтобы они работали вместе с изображением.</p>
+              <p className="section-lead">Создаю рекламные и имиджевые AI-ролики, сочетая возможности нейросетевой генерации с классическим режиссёрским монтажом.</p>
+              <p className="muted">Разрабатываю визуальную концепцию, генерирую и анимирую сцены, выстраиваю историю и ритм видео. Работаю с музыкой и звуковым оформлением, чтобы готовый ролик воспринимался как цельная режиссёрская работа.</p>
             </div>
           </div>
         </section>

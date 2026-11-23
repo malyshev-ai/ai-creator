@@ -44,7 +44,7 @@ export function Gallery() {
             <article key={item.id}>
               <button className="film" type="button" aria-haspopup="dialog" aria-label={`Смотреть: ${item.title}`} onClick={(event) => open(index, event.currentTarget)}>
                 <span className={`film-cover film-cover-${item.id}`}>
-                  <img src={mediaPath(`${item.id}.webp`)} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" />
+                  <img src={mediaPath(item.poster ?? `${item.id}.webp`)} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" />
                   <span className="play-icon"><Play size={17} fill="currentColor" aria-hidden="true" /></span>
                 </span>
                 <span className="film-caption">
@@ -71,7 +71,7 @@ export function Gallery() {
               key={film.id}
               ref={video}
               src={mediaPath(`${film.id}.mp4`)}
-              poster={mediaPath(`${film.id}.webp`)}
+              poster={mediaPath(film.poster ?? `${film.id}.webp`)}
               aria-label={film.title}
               width={film.width}
               height={film.height}
