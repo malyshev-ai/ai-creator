@@ -4,8 +4,7 @@ import { mediaPath } from './data/filmography.js';
 import { packages, profile, terms } from './data/site.js';
 
 const services = [
-  { ...packages[0], title: 'Короткий AI-ролик', duration: '5–10 секунд', description: 'Для тизеров, анонсов и короткой рекламы.' },
-  { ...packages[1], title: 'Рекламный AI-ролик', duration: '15–20 секунд', description: 'Для рекламы и презентаций продуктов и брендов.' },
+  ...packages,
   { title: 'Видеомонтаж', price: 'По запросу', description: 'Монтаж из ваших материалов, подбор музыки и оформление звука.' },
 ];
 
@@ -21,18 +20,20 @@ export default function App() {
     <>
       <header className="site-header" id="top">
         <div className="wrap header-inner">
-          <a className="wordmark" href="#top" aria-label="Дмитрий Малышев, наверх">МАЛЫШЕВ<span>.</span></a>
           <nav aria-label="Основная навигация">
             <a href="#works">Работы</a>
             <a href="#about">Обо мне</a>
             <a href="#services">Услуги</a>
+            <a className="header-contact" href="#contact">Контакты <ArrowUpRight aria-hidden="true" size={14} /></a>
           </nav>
-          <a className="header-contact" href="#contact">Контакты <ArrowUpRight aria-hidden="true" size={16} /></a>
         </div>
       </header>
       <main>
         <section className="hero" aria-labelledby="intro-title">
-          <img className="hero-image" src={mediaPath('stillness-hero.webp')} alt="" fetchPriority="high" />
+          <div className="hero-art" aria-hidden="true">
+            <img className="hero-shot hero-shot-main" src={mediaPath('banner-wash.webp')} alt="" fetchPriority="high" />
+            <img className="hero-shot hero-shot-detail" src={mediaPath('banner-spa.webp')} alt="" />
+          </div>
           <div className="wrap hero-inner">
             <p className="eyebrow">AI-креатор / Режиссёр монтажа</p>
             <h1 id="intro-title">Дмитрий Малышев</h1>
@@ -67,7 +68,7 @@ export default function App() {
                   {service.includes && (
                     <details>
                       <summary>Что входит <Plus size={17} aria-hidden="true" /></summary>
-                      <ul>{service.includes.slice(1).map((item) => <li key={item}>{item}</li>)}</ul>
+                      <ul>{service.includes.map((item) => <li key={item}>{item}</li>)}</ul>
                     </details>
                   )}
                 </article>
